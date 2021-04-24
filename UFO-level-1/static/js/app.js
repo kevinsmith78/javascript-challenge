@@ -5,7 +5,7 @@ var tableData = data;
 var Columns= ["datetime", "city","state","country","shape", "durationMinutes", "comments"]
 
 // Select the Button
-var Button=d3.select("filter-button");
+var Button=d3.select("#filter-button");
 
 // Select the body
 var $tbody=d3.select ("tbody");
