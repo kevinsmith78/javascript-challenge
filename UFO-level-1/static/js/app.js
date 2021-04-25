@@ -1,12 +1,12 @@
 // from data.js get the data (Starter code given)
 var tableData = data;
-console.log(tableData);
+//console.log(tableData);
 
 //Grab references to the input element
 var button = d3.select("#filter-btn");
 
 var tbody=d3.select("#tbody");  
-console.log(data);
+//console.log(data);
     //filter data to run through every fiter data aray filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
 data.forEach(observation =>{
     //output the message to the web console (removed to object.entries)
@@ -14,7 +14,7 @@ data.forEach(observation =>{
     var row=tbody.append("tr");
     //use 'Object.entries' to console.log each report
     Object.entries(observation).forEach(([key,value], index) => {
-        console.log(key,value, index);
+        //console.log(key,value, index);
     //append 1 cell per weather report
         var cell = row.append("td");
         cell.text(value);
@@ -33,21 +33,22 @@ var inputElement=d3.select("#datetime");
         //Get the value property of the input element
 var inputValue = inputElement.property("value");
         //Console logging for sanity
-    console.log(inputValue);
-    console.log(tableData);
+    //console.log(inputValue);
+    //console.log(tableData);
         //now filter , loop through every event by date time
-var filterdata=tableData.filter(tableData => tableData.datetime === inputValue);
+//var filteredData=tableData.filter(tableData => tableData.datetime === inputValue);
+var filteredData=tableData.filter(rec => ((Date.parse(rec.datetime))>(Date.parse(inputValue))));
+
         //Console logging for sanity
     console.log(filteredData);
         //create the array with the rows for each event
 filteredData.forEach(function(dateData){
-    var row= tbody.append("tr");
+    var row= d3.select('tbody').append("tr");
         //use 'Object.entries' to console.log each report
-    Object.entries(observation).forEach(function([key,value]){
-    console.log(key,value);
+    Object.entries(dateData).forEach(([key,value]) => {row.append("td").text(value);});
+    //console.log(key,value);
         //append 1 cell per weather report
-    var cell = row.append("td");
-    cell.text(value);
-        });
+    //var cell = row.append("td");
+    //cell.text(value);
     });
 });
