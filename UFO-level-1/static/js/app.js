@@ -12,7 +12,7 @@ button.on("click",function(event){
     //Select the input element and get the HTML node
 var inputElement=d3.select("#datetime");
     //Get the value property of the input element
-var inputValue = inputElement.property("value")
+var inputValue = inputElement.property("value");
     //Console logging for sanity
     console.log(inputValue);
     console.log(tableData);
@@ -21,14 +21,14 @@ var filterdata=tableData.filter(tableData => tableData.datetime === inputValue);
     //Console logging for sanity
     console.log(filteredData);
     //create the array with the rows for each event
-    filteredData.forEach(function(dateData{
-        var row=tbody.append("tr");
-        //use 'Object.entries' to console.log each report
-        Object.entries(observation).forEach([key,value]) => {
-        console.log(key,value)
-        //append 1 cell per weather report
-        var cell = row.append("td")
-        cell.text(value)
+filteredData.forEach(function(dateData{
+    var row=tbody.append("tr");
+    //use 'Object.entries' to console.log each report
+    Object.entries(observation).forEach(function([key,value]){
+    console.log(key,value)
+    //append 1 cell per weather report
+    var cell = row.append("td");
+    cell.text(value);
         });
     });
 });
@@ -36,8 +36,8 @@ var filterdata=tableData.filter(tableData => tableData.datetime === inputValue);
 
 
 
-var tbody=d3select(#tbody);  
-console.log(data)
+var tbody=d3.select("#tbody");  
+console.log(data);
     //filter data to run through every fiter data aray filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
 data.forEach(observation =>{
     //output the message to the web console (removed to object.entries)
@@ -45,10 +45,10 @@ data.forEach(observation =>{
     var row=tbody.append("tr");
     //use 'Object.entries' to console.log each report
     Object.entries(observation).forEach([key,value]) => {
-        console.log(key,value)
+        console.log(key,value);
     //append 1 cell per weather report
-        var cell = row.append("td")
-        cell.text(value)
+        var cell = row.append("td");
+        cell.text(value);
         ]);
     });
 });
