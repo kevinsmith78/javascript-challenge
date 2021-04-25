@@ -2,17 +2,22 @@
 var tableData = data;
 console.log(tabledata);
 
-//Select the button
+//Grab references to the input element
 var button = d3.select("#filter-btn");
 
 //Create the event handler
-button.on("click",function(event){
+button.on("click",(){
     //Prevent the page from refreshing
     d3.event.preventDefault();
     tbody.hmtl("");
-    //Select the input element and get the raw HTML node
-   
-    
+    //input the variables for the event listener
+
+
+
+
+
+var tbody=d3select(#tbody);  
+console.log(data)
     //filter data to run through every fiter data aray filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
 data.forEach(observation =>{
     //output the message to the web console (removed to object.entries)
