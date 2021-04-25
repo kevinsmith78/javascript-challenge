@@ -1,5 +1,5 @@
 //from data.js get the data (Starter code given)
-var ufo = data;
+var tableData = data;
 console.log(tabledata);
 
 //create the variables
