@@ -48,5 +48,6 @@ filteredData.forEach(function(dateData){
         //append 1 cell per weather report
     var cell = row.append("td");
     cell.text(value);
+        });
     });
 });
