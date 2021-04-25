@@ -1,6 +1,6 @@
 // from data.js get the data (Starter code given)
 var tableData = data;
-console.log(tabledata);
+console.log(tableData);
 
 //Grab references to the input element
 var button = d3.select("#filter-btn");
