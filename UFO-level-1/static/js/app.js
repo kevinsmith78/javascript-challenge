@@ -4,14 +4,21 @@ console.log(tabledata);
 
 // Select the body
 var $tbody=d3.select ("tbody");
-console.log(data)
+console.log(data);
 
-// Reference the Field Date and city
-var inputFieldDate = d3.select("#datetime");
-var inputFieldCity = d3.select("#city");
+//Use d3 to update each cells's text with alien report values
+data.forEach(function(ufoSighting);{
+    console.log(ufosighting);
+    var row=$tbody.append("tr");
+    Object.defineProperties(ufoSighting.forEach(function([key,value]){
+        console.log(key,value);
+        //Append a cell to the row for each value in the ufo sighting object
+        var cell = row.append("td");
+        cell.text(value);
 
-//select the HTML element for entry
-var datainput = (datainput) ==> 
+    }
+}
+
 
 
 
