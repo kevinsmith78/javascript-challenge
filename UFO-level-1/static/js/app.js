@@ -24,30 +24,29 @@ data.forEach(observation =>{
 
 //Create the event handler
 button.on("click",function(event){
-    //Prevent the page from refreshing
+        //Prevent the page from refreshing
     d3.event.preventDefault();
-    //remove anything from the HTML list
+        //remove anything from the HTML list
     tbody.html("");
-    //Select the input element and get the HTML node
+        //Select the input element and get the HTML node
 var inputElement=d3.select("#datetime");
-    //Get the value property of the input element
+        //Get the value property of the input element
 var inputValue = inputElement.property("value");
-    //Console logging for sanity
+        //Console logging for sanity
     console.log(inputValue);
     console.log(tableData);
-    //now filter , loop through every event by date time
+        //now filter , loop through every event by date time
 var filterdata=tableData.filter(tableData => tableData.datetime === inputValue);
-    //Console logging for sanity
+        //Console logging for sanity
     console.log(filteredData);
-    //create the array with the rows for each event
+        //create the array with the rows for each event
 filteredData.forEach(function(dateData){
     var row= tbody.append("tr");
-    //use 'Object.entries' to console.log each report
+        //use 'Object.entries' to console.log each report
     Object.entries(observation).forEach(function([key,value]){
     console.log(key,value);
-    //append 1 cell per weather report
+        //append 1 cell per weather report
     var cell = row.append("td");
     cell.text(value);
-        
     });
 });
