@@ -6,12 +6,32 @@ console.log(tabledata);
 var button = d3.select("#filter-btn");
 
 //Create the event handler
-button.on("click",(){
+button.on("click",function(event){
     //Prevent the page from refreshing
     d3.event.preventDefault();
-    tbody.hmtl("");
-    //input the variables for the event listener
-
+    //Select the input element and get the HTML node
+var inputElement=d3.select("#datetime");
+    //Get the value property of the input element
+var inputValue = inputElement.property("value")
+    //Console logging for sanity
+    console.log(inputValue);
+    console.log(tableData);
+    //now filter , loop through every event by date time
+var filterdata=tableData.filter(tableData => tableData.datetime === inputValue);
+    //Console logging for sanity
+    console.log(filteredData);
+    //create the array with the rows for each event
+    filteredData.forEach(function(dateData{
+        var row=tbody.append("tr");
+        //use 'Object.entries' to console.log each report
+        Object.entries(observation).forEach([key,value]) => {
+        console.log(key,value)
+        //append 1 cell per weather report
+        var cell = row.append("td")
+        cell.text(value)
+        });
+    });
+});
 
 
 
@@ -29,33 +49,14 @@ data.forEach(observation =>{
     //append 1 cell per weather report
         var cell = row.append("td")
         cell.text(value)
-     })
+        ]);
+    });
 });
-    var row=tbody.append("tr");
-    Object.entiries(dateData).forEach(function([key,value]){
-    console.log(key,value);
-
-
-        //Append a cell to the row for each value in the ufo sighting object
-        var row = tbody.append("tr");
-        Object.entries(dateData).forEach(function([key,value]){
-        var cell=tbody.append("td");
-        cell.text(value);
-        });
-    })
-});
+ 
 
 
 
-// Select the body
-var tbody=d3.select ("tbody");
-console.log(data);
 
-//Use d3 to update each cells's text with alien report values
-data.forEach(function(ufoSighting){
-    console.log(ufosighting);
-    
-});
 
 
 
