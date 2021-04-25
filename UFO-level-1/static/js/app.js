@@ -6,18 +6,29 @@ console.log(tabledata);
 var button = d3.select("#filter-btn");
 
 //Create the event handler
-button.on"click",() => {
+button.on("click",function(event){
     //Prevent the page from refreshing
     d3.event.preventDefault();
     tbody.hmtl("");
     //Select the input element and get the raw HTML node
-    var inputDate = inputfieldDate.property("value");
+var inputElement = d3.select("#datetime");
+var inputValue = inputElement.property("value");
     //console logging for sanity
-    console.log(inputDate)
+    
     //filter data to run through every fiter data aray
-    var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
-
-}
+var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
+filteredData.forEach(function(dateData){
+    var row=tbody.append("tr");
+    Object.entiries(dateData).forEach(function([key,value]){
+        console.log(key,value);
+//Append a cell to the row for each value in the ufo sighting object
+        var row = tbody.append("tr");
+        Object.entries(dateData).forEach(function([key,value]){
+        var cell=tbody.append("td");
+        cell.text(value);
+        });
+    })
+});
 
 
 
@@ -28,13 +39,7 @@ console.log(data);
 //Use d3 to update each cells's text with alien report values
 data.forEach(function(ufoSighting){
     console.log(ufosighting);
-    var row=tbody.append("tr");
-    Object.defineProperties(ufoSighting).forEach(function([key,value]){
-        console.log(key,value);
-//Append a cell to the row for each value in the ufo sighting object
-        var cell = row.append("td");
-        cell.text(value);
-    });
+    
 });
 
 
