@@ -36,7 +36,7 @@ var inputValue = inputElement.property("value");
     console.log(inputValue);
     console.log(tableData);
         //now filter , loop through every event by date time
-var filterdata=tableData.filter(tableData => tableData.datetime === inputValue);
+var filteredData=tableData.filter(tableData => tableData.datetime === inputValue);
         //Console logging for sanity
     console.log(filteredData);
         //create the array with the rows for each event
