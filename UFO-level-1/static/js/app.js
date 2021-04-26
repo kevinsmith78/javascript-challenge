@@ -36,7 +36,7 @@ var inputValue = inputElement.property("value");
     //console.log(inputValue);
     //console.log(tableData);
         //now filter , loop through every event by date time
-//var filteredData=tableData.filter(tableData => tableData.datetime === inputValue);
+    //var filteredData=tableData.filter(tableData => tableData.datetime === inputValue);
 var filteredData=tableData.filter(rec => ((Date.parse(rec.datetime))>(Date.parse(inputValue))));
 
         //Console logging for sanity
